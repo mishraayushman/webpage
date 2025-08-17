@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>धनवन्तरी क्लिनिक - डॉ.सचिन</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Noto Sans Devanagari', sans-serif, Arial, Helvetica, sans-serif;
+        }
+
+        /* Custom bullet style for specialties */
+        .specialty-list li::before {
+            content: "✓";
+            color: #f59e0b;
+            /* amber-500 */
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }/*hi*/
+
+        /* Smooth scrolling for internal anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-r from-blue-300 to-blue-600 min-h-screen flex flex-col text-gray-900">
+
+    <!-- Header -->
+    <header class="bg-blue-900 text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex flex-wrap items-center justify-between">
+            <div class="text-3xl font-extrabold drop-shadow-lg select-none">
+                धनवन्तरी क्लिनिक
+            </div>
+            <nav class="space-x-6 text-lg font-semibold hidden md:flex">
+                <a href="#about" class="hover:text-amber-400 transition-colors">हमारे बारे में</a>
+                <a href="#services" class="hover:text-amber-400 transition-colors">सेवाएं</a>
+                <a href="#doctor" class="hover:text-amber-400 transition-colors">डॉ. सचिन</a>
+                <a href="#contact" class="hover:text-amber-400 transition-colors">संपर्क करें</a>
+            </nav>
+            <button id="mobile-menu-button" aria-label="मेनू खोलें" class="md:hidden focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" viewBox="0 0 24 24">
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <nav id="mobile-menu" class="hidden bg-blue-700">
+            <a href="#about" class="block px-6 py-3 border-b border-blue-600 hover:bg-blue-800">हमारे बारे में</a>
+            <a href="#services" class="block px-6 py-3 border-b border-blue-600 hover:bg-blue-800">सेवाएं</a>
+            <a href="#doctor" class="block px-6 py-3 border-b border-blue-600 hover:bg-blue-800">डॉ. सचिन</a>
+            <a href="#contact" class="block px-6 py-3 hover:bg-blue-800">संपर्क करें</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="flex-grow flex items-center justify-center p-6 bg-blue-100">
+        <div class="max-w-5xl w-full bg-white rounded-xl shadow-lg overflow-hidden grid grid-cols-1 md:grid-cols-2">
+            <div class="p-8 flex flex-col gap-6 justify-center">
+                <h1 class="text-4xl font-extrabold text-blue-900 leading-tight select-text">
+                    डॉ. सचिन - आयुर्वेदिक जनरल फिजिशियन
+                </h1>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    धनवन्तरी क्लिनिक में आपका स्वागत है। हम आपके स्वास्थ्य के लिए समर्पित हैं, प्रामाणिक आयुर्वेदिक
+                    पद्धति द्वारा बेहतर जीवनशैली प्रदान करना हमारा उद्देश्य है।
+                </p>
+                <a href="#contact"
+                    class="self-start px-6 py-3 bg-amber-400 text-blue-900 font-semibold rounded-lg shadow-md hover:bg-amber-500 transition-colors">
+                    अपॉइंटमेंट बुक करें
+                </a>
+            </div>
+            <div class="relative overflow-hidden w-full h-80 rounded-lg shadow-md">
+                <div class="carousel flex w-full transition-transform duration-700 ease-in-out">
+                    <!-- Images -->
+                    <img src="images/board.jpg" alt="आयुर्वेदिक चिकित्सा क्लिनिक का चित्र 1"
+                        class="w-full h-80 flex-shrink-0 object-cover object-center"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400?text=Clinic+Image+1';" />
+
+                    <!-- <img src="clinic.jpg" alt="आयुर्वेदिक चिकित्सा क्लिनिक का चित्र 2"
+                        class="w-full h-80 flex-shrink-0 object-cover object-center"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400?text=Clinic+Image+2';" /> -->
+
+                    <!-- <img src="board3.jpg" alt="आयुर्वेदिक चिकित्सा क्लिनिक का चित्र 3"
+                        class="w-full h-80 flex-shrink-0 object-cover object-center"
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x400?text=Clinic+Image+3';" /> -->
+                </div>
+
+                <!-- Dots -->
+                <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    <span class="dot w-3 h-3 rounded-full bg-gray-400"></span>
+                    <!-- <span class="dot w-3 h-3 rounded-full bg-gray-400"></span> -->
+                    <!-- <span class="dot w-3 h-3 rounded-full bg-gray-400"></span> -->
+                </div>
+            </div>
+
+            <script>
+                let index1 = 0;
+                const carousel1 = document.querySelector(".carousel");
+                const dots1 = document.querySelectorAll(".dot");
+                const total1 = dots1.length;
+
+                function showSlide1(i) {
+                    carousel1.style.transform = `translateX(-${i * 100}%)`;
+                    dots1.forEach((dot, idx) => {
+                        dot.classList.remove("bg-blue-500");
+                        dot.classList.add("bg-gray-400");
+                        if (idx === i) {
+                            dot.classList.remove("bg-gray-400");
+                            dot.classList.add("bg-blue-500");
+                        }
+                    });
+                }
+
+                setInterval(() => {
+                    index1 = (index1 + 1) % total1;
+                    showSlide1(index1);
+                }, 3000);
+
+                showSlide1(index1);
+            </script>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-white py-12 px-6 md:px-0">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-extrabold text-blue-900 mb-6 border-b-4 border-amber-400 w-max select-text">
+                धनवन्तरी क्लिनिक के बारे में</h2>
+            <p class="text-gray-700 text-lg leading-relaxed">
+                धनवन्तरी क्लिनिक में हम पारंपरिक आयुर्वेदिक ज्ञान और आधुनिक विज्ञान का संयोग करते हैं, जिससे आपको
+                सुरक्षित और प्रभावशाली इलाज प्रदान होता है। हमारे यहाँ सभी सामान्य और जटिल रोगों के लिए प्राकृतिक और
+                प्रभावी उपचार उपलब्ध हैं।
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-blue-50 py-12 px-6 md:px-0">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-extrabold text-blue-900 mb-8 border-b-4 border-amber-400 w-max select-text">सेवाएं
+            </h2>
+            <ul class="specialty-list list-none text-gray-800 text-xl space-y-4 max-w-lg mx-auto">
+                <li>आयुर्वेदिक रोग निदान और उपचार</li>
+                <li>त्वचा रोगों का आयुर्वेदिक इलाज</li>
+                <li>यौन रोग विशेषज्ञता</li>
+                <li>गठिया और जोड़ों के दर्द का प्रबंधन</li>
+                <li>शारीरिक स्वास्थ्य और पुनरुद्धार चिकित्सा</li>
+                <li>स्वास्थ्य परामर्श और रोग निवारण</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Doctor Section -->
+    <section id="doctor" class="bg-white py-12 px-6 md:px-0">
+        <div class="flex flex-col md:flex-row gap-6 p-4">
+            <!-- Image Carousel (Left side) -->
+            <div class="flex-shrink-0 w-full md:w-1/3 rounded-lg overflow-hidden shadow-md relative">
+                <div class="carousel-wrapper overflow-hidden relative w-full h-80">
+                    <div class="carousel2 flex w-full transition-transform duration-700 ease-in-out">
+                        <img src="images/p1.jpg" class="w-full flex-shrink-0 object-cover object-center"
+                            alt="डॉ. सचिन का चित्र 1">
+                        <img src="images/profile2.jpg" class="w-full flex-shrink-0 object-cover object-center"
+                            alt="डॉ. सचिन का चित्र 2">
+                    </div>
+                    <!-- Dots -->
+                    <div class="dots2 absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                        <span class="dot2 w-3 h-3 rounded-full bg-gray-400"></span>
+                        <span class="dot2 w-3 h-3 rounded-full bg-gray-400"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-grow text-gray-800 text-lg select-text">
+                <h3 class="text-2xl font-bold text-blue-900 mb-4">डॉ. सचिन</h3>
+                <p class="mb-3"><strong>पात्रता:</strong> B.A.M.S. (D.U.)</p>
+                <p class="mb-3"><strong>पंजीकरण संख्या:</strong> 130897</p>
+                <p>
+                    डॉ. सचिन एक अनुभवी और भरोसेमंद आयुर्वेदिक जनरल फिजिशियन हैं,
+                    जो वर्षों से विविध रोगों के उपचार में विशेषज्ञता रखते हैं।
+                    धनवन्तरी क्लिनिक में वे मरीजों के शारीरिक, मानसिक और भावनात्मक
+                    स्वास्थ्य में सुधार के लिए समग्र आयुर्वेदिक उपचार प्रदान करते हैं।
+                </p>
+            </div>
+        </div>
+
+
+
+        <script>
+            let index2 = 0;
+            const carousel2 = document.querySelector(".carousel2");
+            const dots2 = document.querySelectorAll(".dot2");
+            const total2 = dots2.length;
+
+            function showSlide2(i) {
+                carousel2.style.transform = `translateX(-${i * 100}%)`;
+                dots2.forEach((dot, idx) => {
+                    dot.classList.remove("bg-blue-500");
+                    dot.classList.add("bg-gray-400");
+                    if (idx === i) {
+                        dot.classList.remove("bg-gray-400");
+                        dot.classList.add("bg-blue-500");
+                    }
+                });
+            }
+
+            setInterval(() => {
+                index2 = (index2 + 1) % total2;
+                showSlide2(index2);
+            }, 3000);
+
+            showSlide2(index2);
+        </script>
+
+
+
+
+
+
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-blue-900 text-white py-12 px-6 md:px-0">
+        <div class="container mx-auto max-w-3xl">
+            <h2 class="text-3xl font-extrabold mb-6 border-b-4 border-amber-400 w-max select-text">संपर्क करें</h2>
+            <p class="mb-4 text-lg">डॉ. सचिन के धनवन्तरी क्लिनिक से संपर्क करें या अपॉइंटमेंट बुक करें।</p>
+            <div class="bg-blue-800 rounded-lg p-6 shadow-lg">
+                <p class="mb-4 text-xl flex items-center gap-3">
+                    <svg class="w-6 h-6 inline-block text-amber-400" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M2 8.5a5.5 5.5 0 0 1 11 0v1.5c0 2 1.5 3.5 3 3.5h2a2.5 2.5 0 0 1 2.5 2.5v3.5"></path>
+                        <path d="M8.5 16.5H6a2 2 0 0 0-2 2v2.5h14v-2.5a2 2 0 0 0-2-2h-2.5"></path>
+                    </svg>
+                    <span>फोन/मोबाइल: <a href="tel:+919431173568"
+                            class="underline hover:text-amber-300">+91-9431173568</a></span>
+                </p>
+                <p class="mb-4 text-xl flex items-center gap-3">
+                    <!-- Location pin icon -->
+                    <svg class="w-6 h-6 inline-block text-amber-400" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M21 10c0 6-9 12-9 12S3 16 3 10a9 9 0 1 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+
+                    <!-- Google Maps link -->
+                    <a href="https://maps.app.goo.gl/3D2DJqhz2LQMpMMk6" target="_blank" rel="noopener"
+                        class="underline hover:text-amber-300 flex items-center gap-2"
+                        aria-label="Google Maps पर स्थान खोलें" title="Google Maps पर स्थान खोलें">
+                        <span>स्थान: श्याम मंदिर के पास,हरमू रोड,गाड़ी खाना चौक, रांची</span>
+                        <span
+                            class="inline-flex items-center text-sm font-semibold px-2 py-1 rounded-md border border-amber-400">
+                            नक्शा में देखें
+                        </span>
+                    </a>
+                </p>
+
+
+                <form id="contactForm" class="flex flex-col gap-4 mt-6" novalidate>
+                    <label class="block">
+                        <span class="text-sm font-semibold mb-1">नाम</span>
+                        <input type="text" name="name" required
+                            class="w-full rounded-md px-3 py-2 text-blue-900 focus:outline-none focus:ring-2 focus:ring-amber-400"
+                            placeholder="आपका नाम दर्ज करें" />
+                        <span class="text-amber-200 text-xs mt-1 hidden" id="errorName">कृपया नाम दर्ज करें</span>
+                    </label>
+                    <label class="block">
+                        <span class="text-sm font-semibold mb-1">फोन नंबर</span>
+                        <input type="tel" name="phone" required pattern="^\\+?\\d{10,15}$"
+                            class="w-full rounded-md px-3 py-2 text-blue-900 focus:outline-none focus:ring-2 focus:ring-amber-400"
+                            placeholder="उदाहरण: 9431173568" />
+                        <span class="text-amber-200 text-xs mt-1 hidden" id="errorPhone">कृपया सही फोन नंबर दर्ज
+                            करें</span>
+                    </label>
+                    <label class="block">
+                        <span class="text-sm font-semibold mb-1">संदेश (वैकल्पिक)</span>
+                        <textarea name="message" rows="3"
+                            class="w-full rounded-md px-3 py-2 text-blue-900 focus:outline-none focus:ring-2 focus:ring-amber-400"
+                            placeholder="कोई प्रश्न या टिप्पणी यहाँ दर्ज करें"></textarea>
+                    </label>
+                    <button type="submit"
+                        class="bg-amber-400 py-3 font-bold rounded-lg shadow-md hover:bg-amber-500 transition-colors text-blue-900">भेजें</button>
+                    <p class="hidden text-green-400 font-semibold" id="formSuccessMsg">आपका संदेश भेज दिया गया है।
+                        धन्यवाद!</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-blue-900 text-white py-4 mt-auto text-center text-xs select-none">
+        © 2024 धनवन्तरी क्लिनिक - डॉ. सचिन | सभी अधिकार सुरक्षित
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+
+        // Simple client-side form validation + WhatsApp forward
+        const form = document.getElementById('contactForm');
+        const errorName = document.getElementById('errorName');
+        const errorPhone = document.getElementById('errorPhone');
+        const successMsg = document.getElementById('formSuccessMsg');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            let valid = true;
+
+            const name = form.name.value.trim();
+            const phone = form.phone.value.trim();
+            const message = form.message.value.trim();
+
+            // Reset error messages
+            errorName.classList.add('hidden');
+            errorPhone.classList.add('hidden');
+            successMsg.classList.add('hidden');
+
+            // Validate Name
+            if (name.length === 0) {
+                errorName.classList.remove('hidden');
+                valid = false;
+            }
+
+            // Validate Phone (Indian number or Intl format roughly)
+            const phonePattern = /^\+?\d{10,15}$/;
+            if (!phonePattern.test(phone)) {
+                errorPhone.classList.remove('hidden');
+                valid = false;
+            }
+
+            if (valid) {
+                // WhatsApp Number (with country code, e.g. 91 for India)
+                const whatsappNumber = "919431173568";
+
+                // Create WhatsApp message
+                const whatsappMsg = `*नाम:* ${name}%0a*फोन:* ${phone}%0a*संदेश:* ${message}`;
+
+                // Open WhatsApp with pre-filled message
+                const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMsg}`;
+                window.open(whatsappURL, "_blank");
+
+                // Optional: reset form
+                form.reset();
+                successMsg.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+
+</html>
